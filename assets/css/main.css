@@ -1,0 +1,145 @@
+
+.container {
+	background-color: red;
+	width: 100%;
+	height: 100%;
+	border: 1px solid;
+}
+
+/* 
+ * 首页样式
+ * ======
+ *
+ * 问题
+ * ---
+ * Q1: logo使用a标签是否合适;
+ * Q2: 首页导航页面结构是否合理;
+ * Q3: a标签右边框是否可以简化;
+ */
+
+/* 首页-导航 */
+.nav {
+	position: fixed;
+	border: 1px solid;
+	width: 100%;
+	height: 50px;
+	top: 0px;
+	left: 0px;
+	margin-bottom: 5px;
+	font-size: 14px;
+	background-color: #FCFCFC;
+	z-index: 999;
+}
+
+.nav span {
+	float: right;
+	margin-right: 2px;
+	margin-top: 30px;
+}
+
+.nav a {
+	padding-right: 4px;
+	border-right: 1px solid;
+}
+a:last-child {
+	border-right: 0px;
+}
+
+/* 首页-logo */
+#logo {
+	width: 48px;
+	height: 48px;
+	display: block;
+	background: url(../img/logo_40*40.png) no-repeat 1px 1px;
+	background-size: 48px 48px;
+	float: left;
+	border-right: 0px;
+}
+
+/* 首页-个人信息 */
+
+.profile {
+	position: relative;
+	background-color: #FCFCFC;
+}
+
+.profile .img {
+	margin-top: 50px; 
+	width: 100%;
+	height: 200px;
+	background: url(../img/profile-image_640*400.jpg) no-repeat;
+}
+
+.profile .icon {
+	width: 60px;
+	height: 60px;
+	border-radius: 60px;
+	border-style: dotted;
+	position: absolute;
+	left:42.5%;
+	top: 150px;
+	background: url(../img/profile-icon_45*45.png) no-repeat;
+	background-size: 60px 60px;
+}
+
+.profile .info {
+	margin-top: 30px;
+	padding-bottom: 15px;
+	text-align: center;
+}
+
+/* 首页-文章信息 */
+
+.article {
+	margin: 5px;
+	background-color: #FCFCFC;
+}
+
+.article li {
+	border: 1px solid;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 5px;
+}
+
+.article span {
+	padding: 20px 0px 20px 20px;
+	float: left;
+}
+
+.article b {
+	width: 50px;
+	height: 50px;
+	background: url(../img/css-icon_460*460.png) no-repeat;
+	background-size: 50px 50px;
+	float: right;
+}
+
+/* 首页-联系方式 */
+.contact {
+	background-color: #FCFCFC;
+	width: 100%;
+	height: 100px;
+}
+
+.contact-info {
+	float: left;
+	padding-left: 5px;
+}
+
+.contact-info span {
+	padding-top: 15px;
+	display: block;
+}
+
+.weixin {
+	width: 100px;
+	height: 100px;
+	background: url(../img/weixin_57*57.png) no-repeat;
+	background-size: 100px 100px;
+	float: right;
+	padding-right: 5px;
+}
+
+
+

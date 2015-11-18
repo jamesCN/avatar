@@ -1,0 +1,32 @@
+/* 
+ * 初始化以及设置基础样式
+ * ==================
+ *
+ *
+ * 字体设置
+ * ------—-
+ * 
+ *
+ * @author James Yu
+ * @created 2015.11.16
+ * @updated 2015.11.16
+ */
+
+* {
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+html, body {
+	height: 100%;
+}
+
+ul {
+	list-style: none;
+}
+
+img {
+	border-style: none;
+}
