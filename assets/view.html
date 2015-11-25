@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="avatar.js">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="description" content="" />
+	<meta name="keywords" content="html5 css3 javascript node.js spa"/>
+
+	<title>xBlog's 路图</title>
+
+    <link href="./css/base.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet"/>
+    <link href="./css/view.css" rel="stylesheet"/>
+
+    <script type="application/javascript" src="./js/lib/jquery-1.10.1.min.js"></script>
+    <script type="application/javascript" src="./js/lib/tmpl.js"></script>
+		  
+</head>
+
+<script type="text/html" id="tplIndex">
+</script>
+
+<body id="app">
+
+	<div id="view" class="container">
+		<div id="header">
+			<div class="back" onclick="window.history.go(-1)"><</div>
+			<div class="title">
+				路之旅图
+			</div>
+			<div class="link">^</div>
+			<hr>
+		</div>
+		<div id="body">
+			<div id="view">
+				<div class="box">
+					<div class="content">
+						<img src="./img/trip/1.jpg">
+					</div>
+				</div>
+				<div class="box">
+					<div class="content">
+						<img src="./img/trip/4.jpg">
+					</div>
+				</div>
+				<div class="box">
+					<div class="content">
+						<img src="./img/trip/3.jpg">
+					</div>
+				</div>
+				<div class="box">
+					<div class="content">
+						<img src="./img/trip/2.jpg">
+					</div>
+				</div>
+				<div class="box">
+					<div class="content">
+						<img src="./img/trip/5.jpg">
+					</div>
+				</div>
+				<div class="box">
+					<div class="content">
+						<img src="./img/trip/6.jpg">
+					</div>
+				</div>	
+				<div class="box">
+					<div class="content">
+						<img src="./img/trip/7.jpg">
+					</div>
+				</div>
+				<div class="box">
+					<div class="content">
+						<img src="./img/trip/8.jpg">
+					</div>
+				</div>
+				<div class="box">
+					<div class="content">
+						<img src="./img/trip/9.jpg">
+					</div>
+				</div>	
+				<div class="box">
+					<div class="content">
+						<img src="./img/trip/10.jpg">
+					</div>
+				</div>
+				<div class="box">
+					<div class="content">
+						<img src="./img/trip/11.jpg">
+					</div>
+				</div>
+				<div class="box">
+					<div class="content">
+						<img src="./img/trip/12.jpg">
+					</div>
+				</div>
+				<div class="box">
+					<div class="content">
+						<img src="./img/trip/13.jpg">
+					</div>
+				</div>
+				<div class="box">
+					<div class="content">
+						<img src="./img/trip/14.jpg">
+					</div>
+				</div>	
+				<div class="box">
+					<div class="content">
+						<img src="./img/trip/15.jpg">
+					</div>
+				</div>
+				<div class="box">
+					<div class="content">
+						<img src="./img/trip/16.jpg">
+					</div>
+				</div>						
+			</div>			
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			imgFlow();
+		});
+
+		function imgFlow() {
+			var box = $(".box");
+			var boxWidth = box.eq(0).width();
+			var num = Math.floor($(window).width()/boxWidth);
+			console.log("window's with:", $(window).width());
+			var boxArr = [];
+			box.each(function(index, el) {
+				console.log("boxArr:", $(window).width());
+				var boxHeight = box.eq(index).height();
+				if(index < num) {
+					boxArr[index] = boxHeight+2;
+				} else {
+					var minBoxHeight = Math.min.apply(null, boxArr);
+					var minBoxIndex = $.inArray(minBoxHeight, boxArr);
+					$(el).css({
+						"position": "absolute",
+						"top": minBoxHeight,
+						"left": box.eq(minBoxIndex).position().left
+					});
+					boxArr[minBoxIndex] += box.eq(index).height()+2;
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>

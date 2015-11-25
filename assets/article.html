@@ -11,7 +11,7 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="html5 css3 javascript node.js spa"/>
 
-	<title>James Yu's xBlog</title>
+	<title>xBlog's 文章</title>
 
     <link href="./css/base.css" rel="stylesheet">
     <link href="./css/main.css" rel="stylesheet"/>
@@ -26,29 +26,25 @@
 
 <body id="app">
 
-	<div id="index" class="container">
+	<div id="article" class="container">
 		<div id="header">
-			<a href="" id="logo"></a>
-			<span class="nav">
-				<a href="./article.html">文章</a>
-				<a href="./view.html">路图</a>
-				<a href="./trip.html">关于我</a>
-			</span>
+			<div class="back" onclick="window.history.go(-1)"><</div>
+			<div class="title">
+				文章列表
+			</div>
+			<div class="link">^</div>
 			<hr>
 		</div>
 		<div id="body">
-			<div id="profile">
-				<div class="pro-img"></div>
-				<div class="pro-icon"></div>
-				<div class="pro-info">
-					<span>读书 or 旅行，心和身体至少一个是在路上。</span>
+			<div id="advice">
+				<div class="ad-swap">
 				</div>
 			</div>
 			<div id="article">
 				<ul class="art-list">
 					<li><span><b>[原创]</b><a href="./detail.html">谈CSS与Table布局的核心区别。</a></span><img src="./img/article/css_200x200.png"></img></li>
 					<li><span><b>[分享]</b><a href="./detail.html">不可不知的CSS310个高级技巧。</a></span><img src="./img/article/css3_180x180.png"></img></li>
-					<li><span><b>[原创]</b><a href="./detail.html">(fn())()JS函数大起底。</a></span><img src="./img/article/ajax_200x200.png"></img></li>
+					<li><span><b>[原创]</b><a href="./detail.html">JS函数大起底[(fn())();]。你不知道的Function</a></span><img src="./img/article/ajax_200x200.png"></img></li>
 					<li><span><b>[原创]</b><a href="./detail.html">Javascript中哪些面向对象写法。</a></span><img src="./img/article/js_200x200.png"></img></li>
 				</ul>
 				<ul class="art-list">
@@ -56,7 +52,15 @@
 					<li><span><b>[原创]</b><a href="./detail.html">谈HTML5中的Socket.io使用。</a></span><img src="./img/article/html5_200x200.png"></img></li>
 					<li><span><b>[分享]</b><a href="./detail.html">图解CSS3选择器。</a></span><img src="./img/article/css3_180x180.png"></img></li>
 					<li><span><b>[分享]</b><a href="./detail.html">电商业务开发中的那些坑！</a></span><img src="./img/article/w3c_164x164.png"></img></li>
-				</ul>				
+				</ul>
+				<ul class="art-list">
+					<li><span><b>[分享]</b><a href="./detail.html">如何优化MySQL中的索引。</a></span><img src="./img/article/mysql_200x200.png"></img></li>
+					<li><span><b>[原创]</b><a href="./detail.html">谈HTML5中的Socket.io使用。</a></span><img src="./img/article/html5_200x200.png"></img></li>
+					<li><span><b>[分享]</b><a href="./detail.html">图解CSS3选择器。</a></span><img src="./img/article/css3_180x180.png"></img></li>
+					<li><span><b>[分享]</b><a href="./detail.html">电商业务开发中的那些坑！</a></span><img src="./img/article/w3c_164x164.png"></img></li>
+					<li><span><b>[原创]</b><a href="./detail.html">谈HTML5中的Socket.io使用。</a></span><img src="./img/article/html5_200x200.png"></img></li>
+					<li><span><b>[分享]</b><a href="./detail.html">图解CSS3选择器。</a></span><img src="./img/article/css3_180x180.png"></img></li>
+				</ul>									
 			</div>
 			<div id="contact">
 				<div class="con-info">

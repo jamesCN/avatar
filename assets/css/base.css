@@ -21,6 +21,7 @@
 
 html, body {
 	height: 100%;
+	overflow-x:hidden;
 }
 
 ul {
@@ -30,3 +31,29 @@ ul {
 img {
 	border-style: none;
 }
+
+hr {
+	height:0px; border-top:1px solid #B2B2B2; border-right:0px; border-bottom:0px; border-left:0px;	
+}
+
+a:link {
+	text-decoration:none;
+	color: #000;
+}
+a:hover {
+	text-decoration:underline;
+	color: #000;
+}
+a:active{
+	text-decoration:none;
+	color: #000;
+}
+a:visited {
+	text-decoration:none;
+	color: #000;
+}
+
+.clear {
+	clear: both;
+}
+

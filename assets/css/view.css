@@ -1,0 +1,37 @@
+/*------------------------------
+ * 首页-文章信息
+ * 问题：
+ * 待解决：
+   1. 检验sublime jshint
+   2. sublime 如何删除插件
+
+------------------------------*/
+
+#view { /* 374 */
+	position: relative;
+	margin-top: 50px;
+	margin-left: 1px;
+	background-color: #F3F3F3;
+}
+
+.box { /* 374-4=370 */
+	float: left;
+	margin-left: 2px;
+	margin-top: 2px;
+	border: none;
+}
+
+.box .content { /* 370-20=350 */
+	padding: 4px;
+	border: 1px solid #ccc;
+}
+
+.box img { /* 350/2=175*/
+	width: 175px;
+	height: auto;
+}
+
+
+
+
+
