@@ -21,7 +21,7 @@
 	padding: 10px 0px;
 }
 
-#info b, #info span{
+#info i, #info b, #info span{
 	font-size: 14px;
 	margin-left: 25px;
 }
