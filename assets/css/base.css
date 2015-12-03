@@ -2,16 +2,20 @@
  * 初始化以及设置基础样式
  * ==================
  *
- *
- * 字体设置
+ * 初始化设置
  * ------—-
- * 
- *
+ * a:伪类设置
+ * ---------
+ * tag:样式设置
+ * ----------
+ * 定位设置
+ * ------
  * @author James Yu
  * @created 2015.11.16
- * @updated 2015.11.16
+ * @updated 2015.12.03
  */
 
+/* 初始化设置 */
 * {
 	margin: 0px;
 	padding: 0px;
@@ -33,9 +37,14 @@ img {
 }
 
 hr {
-	height:0px; border-top:1px solid #B2B2B2; border-right:0px; border-bottom:0px; border-left:0px;	
+	height:0px; 
+	border-top:1px solid #B2B2B2; 
+	border-right:0px; 
+	border-bottom:0px;
+	border-left:0px;	
 }
 
+/* a:伪类设置 */
 a:link {
 	text-decoration:none;
 	color: #000;
@@ -53,7 +62,33 @@ a:visited {
 	color: #000;
 }
 
+/* 标签设置 */
+.tags a{
+	opacity: 0.80;
+	filter:alpha(opacity=80);
+	color: #fff;
+
+	display: inline-block;
+	margin: 0 5px 0px 0;
+	padding: 0 6px;
+	line-height: 18px
+}
+
+.tags a:hover{
+	opacity: 1;
+	filter:alpha(opacity=100);
+}
+
+/* 定位设置 */
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
 .clear {
 	clear: both;
 }
-

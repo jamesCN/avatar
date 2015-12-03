@@ -1,0 +1,30 @@
+/* 
+ * 核心布局代码
+ * ==========
+ *
+ * 通用：
+ * #header/#content
+ * 
+ * @author James Yu
+ * @created 2015.12.03
+ * @updated 2015.12.03
+ */
+
+/* #header */
+#header {
+	position: fixed;
+	z-index: 999;
+
+	height: 50px;
+	width: 100%;
+	
+	background-color: #FFF;
+}
+
+/* #content */
+#content {
+	position: absolute;
+	top: 50px;
+
+	width: 100%;
+}

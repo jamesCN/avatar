@@ -1,0 +1,25 @@
+/* 
+ * 字体样式
+ * ======
+ *
+ * 通过组合(搭建积木)的形式，渲染字体样式。
+ *
+ * 
+ * @author James Yu
+ * @created 2015.12.03
+ * @updated 2015.12.03
+ */
+
+/* 字体样式 */
+.ft14 {
+	font-size: 14px;
+}
+
+.ft15 {
+	font-size: 15px;
+}
+
+.ft16 {
+	font-size: 16px;
+}
+

@@ -1,23 +1,20 @@
 /*------------------------------
- * 首页-文章信息
- * 问题：
- * 待解决：
-   1. 检验sublime jshint
-   2. sublime 如何删除插件
-
+ * 路图-瀑布流
+ *
+ * @author James Yu
+ * @created 2015.12.03
+ * @updated 2015.12.03
 ------------------------------*/
 
 #view { /* 374 */
 	position: relative;
-	margin-top: 50px;
 	margin-left: 1px;
 	background-color: #F3F3F3;
 }
 
 .box { /* 374-4=370 */
 	float: left;
-	margin-left: 2px;
-	margin-top: 2px;
+	margin: 2px 0px 0px 2px;
 	border: none;
 }
 
@@ -27,7 +24,7 @@
 }
 
 .box img { /* 350/2=175*/
-	width: 175px;
+	width: 145px;
 	height: auto;
 }
 
