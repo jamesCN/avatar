@@ -15,11 +15,10 @@ var server = http.createServer(function(request, response) {
     var query = url.parse(request.url).query;
     console.log("log::query::", query);
 
-    var env = (query!=null) ? "query" : "rel";
+    var env = (query!=null) ? query : "dev";
     console.log("log::0_env::", env);
 
     var envPath = envs[env];
-
     console.log("log::0_envPath::", envPath);
 
 

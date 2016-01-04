@@ -18,7 +18,7 @@
     line-height: 2;
 }
 
-#info b, span{
+#info b, #info span{
 	font-size: 14px; /*ToRe*/
 	margin-left: 25px;
 }
