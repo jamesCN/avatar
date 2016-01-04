@@ -7,17 +7,38 @@ var path = require("path");
 
 var mime = require("./mime").types;
 
+var envs = require("./env").envs;
+
 var server = http.createServer(function(request, response) {
 
-	var pathname = url.parse(request.url).pathname;
 
-    var realPath = "assets" + pathname;
+    var query = url.parse(request.url).query;
+    var env = "rel";
+    console.log("log::query::", query);
+
+    if(query!=null) env = query; 
+
+    console.log("log::0_env::", env);
+
+    var envPath = envs[env];
+
+    console.log("log::0_envPath::", envPath);
+
+
+    var pathname = url.parse(request.url).pathname;
+    // 处理Domain访问
+    if(pathname == "/") pathname+="index.html";
+
+    // 获取访问URL
+    var realPath = envPath + pathname;
     console.log("log::1_realPath::", realPath);
 
+    // 获取资源扩展名
     var ext = path.extname(realPath);
     ext = ext ? ext.slice(1) : "unknown";
     console.log("log::2_extname::", ext);
 
+    // 获取资源类型
     var contentType = mime[ext] || "text/plain";
     console.log("log::3_contentType::", contentType);
 
