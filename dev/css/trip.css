@@ -1,0 +1,97 @@
+/*------------------------------
+ * 关于我
+ *
+ * @author James Yu
+ * @created 2015.12.03
+ * @updated 2015.12.03
+------------------------------*/
+
+/* 个人信息 */
+#info, #trip{
+	position: relative;
+	margin-top: 10px;
+	background-color: #fff;
+	padding: 10px 0px;
+}
+
+#info li {
+    line-height: 2;
+}
+
+#info b, span{
+	font-size: 14px; /*ToRe*/
+	margin-left: 25px;
+}
+
+/* 个人经历 */
+.trip-item {
+    position: relative;
+	margin-left: 30px;
+
+    border-left: 1px solid #bdbdbd;    
+}
+
+.trip-item .content {
+    margin-left: 20px;
+	border-bottom: 1px solid #ddd;
+}
+
+.trip-item .trip-bottom {
+	border-bottom: 0px none;
+}
+
+.trip-item strong{
+    display: block;
+    padding-top: 15px;
+
+    line-height: 1.5; /*ToRe*/
+    font-size: 1.4rem; /*ToRe*/
+
+    color: #999;
+}
+
+.trip-item p {
+    line-height: 1; /*ToRe*/
+    padding: 10px 0px;
+    color: #999;
+}
+
+
+.trip-item:first-child strong,
+.trip-item:first-child p{
+    color: #ff5300;
+}
+.trip-item:first-child strong {
+    padding-top: 0;
+}
+
+
+.trip-item:after {
+    position: absolute;
+    left: -7px;
+    top: 20px;
+
+    content: '';
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 10px;
+    border: 2px solid #FFF;
+
+    background: #BDBDBD;
+}
+
+.trip-item:first-child:after {
+    top: 0;
+    left: -11px;
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 14px;
+    border: 4px solid #FFCBB2;
+
+    background: #FF5300;    
+}

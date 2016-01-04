@@ -1,0 +1,55 @@
+/*------------------------------
+ * 首页-文章信息
+ * 问题：
+ * 待解决：
+   1. 检验sublime jshint
+   2. sublime 如何删除插件
+------------------------------*/
+
+/* 文章列表-广告 */
+
+#advice {
+    margin: 5px 5px;
+}
+
+.ad-swap {
+    width: 100%;
+    height: 180px;
+    background: url(../img/article/ad-swap-01_640x400.png) no-repeat;
+}
+
+#article .art-list {
+    margin: 0px 5px;
+}
+
+.art-list li {
+    height: 50px;
+
+    border-radius: 5px;
+    margin-bottom: 5px;
+
+    background-color: #FFF;
+}
+
+.art-list span {
+    float: left;
+    width: 75%;
+
+    padding: 20px 0px 0px 20px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.art-list b { /* 为什么需要特殊强调 */
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.art-list img {
+    float: right;
+
+    width: 50px;
+    height: 50px;
+}
