@@ -36,7 +36,7 @@ Header.prototype = {
         var that = this;
 
         $(".back").click(function(){
-            if(bakcType==1) {
+            if(that.bakcType==1) {
                 window.history.go(-1);
             } else {
                 location.href = that.backUrl;    

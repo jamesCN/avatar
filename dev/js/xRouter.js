@@ -19,10 +19,10 @@ AvataJS.prototype = {
 
     modulePage: null,
 
-    urlMap: {
-        "#index": new Index(),
-        "#article": new Article(),
-        "#detail": new Detail()
+    moduleMap: {
+        "index": new Index(),
+        "article": new Article(),
+        "detail": new Detail()
     },
 
     initialize: function(){
@@ -44,21 +44,25 @@ AvataJS.prototype = {
 
         var that = this;
 
-        var url = window.location.hash;
-        console.log("DEBUG::xRouter.js::url:",url);
+        var hash = window.location.hash;
+        console.log("DEBUG::xRouter.js::url:", hash);
         
-        if(!url) {
+        if(!hash) {
             console.log("Debug::request default page.");
             new Index().display();
         }
 
         window.onhashchange = function(){
             
-            var url = window.location.hash;
-            console.log("DEBUG::url", url);
-            console.log("DEBUG::urlMap", that.urlMap);
+            var hash = window.location.hash;
+            console.log("DEBUG::url", hash);
+            console.log("DEBUG::urlMap", that.moduleMap);
 
-            var module = that.urlMap[url];
+            var hashParser = new HashParser(hash);
+            var moduleName = hashParser.getModule();
+
+            var module = that.moduleMap[moduleName];
+
             if(!module) console.log("warn::couldn't find module!");
             console.log("module", module);
             
