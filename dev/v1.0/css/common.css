@@ -1,0 +1,70 @@
+/*------------------------------
+ * 通用以及组件样式设计
+ * ================
+ *
+ * 通用：
+ * #header/#content
+ * 
+ *
+ * @author James Yu
+ * @created 2015.12.02
+ * @updated 2015.12.03
+------------------------------*/
+
+@import url("font.css"); 
+@import url("color.css");
+@import url("layout.css");
+
+
+/* 通用-#header */
+#header .back, .link, .title {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+#header .back, .link {
+	position: absolute;
+    width: 50px;
+}
+
+.link {
+	top: 0px;
+    right: 0px;
+}
+
+.title {
+    font-size: 16px;
+    margin: 0px 50px;
+}
+
+
+/* 通用-#contact */
+#contact {
+	height: 100px;
+	margin: 5px;
+	background-color: #FFF;
+}
+
+.con-info {
+	float: left;
+	padding: 5px;
+}
+
+.con-info span {
+	display: block;
+	padding-top: 12px;
+}
+
+.con-info i {
+	margin-right: 2px;
+}
+
+.weixin {
+	float: right;
+
+	width: 100px;
+	height: 100px;
+	background: url(../img/weixin_57*57.png) no-repeat;
+	background-size: 100px 100px;
+}

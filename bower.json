@@ -1,0 +1,21 @@
+{
+  "name": "me.html5s.net",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "James.Yu"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jamesCN/avatar",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}

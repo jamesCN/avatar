@@ -2,7 +2,7 @@
  * Parse all hash parameters and provide the accessor of parameter
  * 
  * @author James.Yu <x.james.yu@gmail.com>
- * @update 2015-11-04
+ * @create 2016-01-05
  */
 
 
@@ -19,6 +19,12 @@ AvataJS.prototype = {
 
     modulePage: null,
 
+    urlMap: {
+        "#index": new Index(),
+        "#article": new Article(),
+        "#detail": new Detail()
+    },
+
     initialize: function(){
 
         this.content = $("#app");
@@ -30,19 +36,33 @@ AvataJS.prototype = {
     },
 
     initializeMain: function(){
-        console.log("initialized");
+        console.log("DEBUG::xRouter initialized.");
     },
 
 
     thisChangeHash: function(){
 
-        var self = this;
+        var that = this;
+
+        var url = window.location.hash;
+        console.log("DEBUG::xRouter.js::url:",url);
+        
+        if(!url) {
+            console.log("Debug::request default page.");
+            new Index().display();
+        }
 
         window.onhashchange = function(){
             
             var url = window.location.hash;
+            console.log("DEBUG::url", url);
+            console.log("DEBUG::urlMap", that.urlMap);
 
-            console.log("onhashchange", url);
+            var module = that.urlMap[url];
+            if(!module) console.log("warn::couldn't find module!");
+            console.log("module", module);
+            
+            module.display();
 
         }
     }

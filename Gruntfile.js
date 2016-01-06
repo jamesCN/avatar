@@ -5,7 +5,6 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     dirs: {
       src: 'dev/css',
-      libs: 'dev/css/lib',
       dest: 'test',
       destName: 'xblog'
     },
@@ -30,7 +29,7 @@ module.exports = function(grunt) {
       },
       basic: {
         src: [
-        '<%= dirs.libs %>/iconfont/iconfont.css',
+        '<%= dirs.src %>/lib/iconfont/iconfont.css',
         '<%= dirs.src %>/base.css', 
         '<%= dirs.src %>/layout.css', 
         '<%= dirs.src %>/font.css', 
@@ -52,7 +51,7 @@ module.exports = function(grunt) {
           // {expand: true, src: ['path/*'], dest: 'dest/', filter: 'isFile'},
 
           // includes files within path and its sub-directories
-          {expand: true, flatten: true, src: ['<%= dirs.libs %>/iconfont/*'], dest:'<%= dirs.dest %>/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['<%= dirs.src %>/lib/iconfont/*','!<%= dirs.src %>/lib/iconfont/iconfont.css'], dest:'<%= dirs.dest %>/', filter: 'isFile'},
 
           // makes all src relative to cwd
           // {expand: true, cwd: 'path/', src: ['**'], dest: 'dest/'},
@@ -74,6 +73,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-copy');
   // 默认被执行的任务列表。
-  grunt.registerTask('default', ['copy', 'concat']);
+  //grunt.registerTask('default', ['copy', 'concat']);
+  grunt.registerTask('default', [ 'concat']);
 
 };
