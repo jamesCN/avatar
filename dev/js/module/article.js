@@ -1,4 +1,3 @@
-
 /*************************************************
 
 Version:
@@ -11,14 +10,14 @@ Author: James.Yu
 *************************************************/
 
 
-function Article() {
+function ModArticle() {
 
     this.initialize();
     return this;
     
 };
 
-Article.prototype = {
+ModArticle.prototype = {
 
     container: null,
     tmpl: "tplPageArticle",

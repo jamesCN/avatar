@@ -11,14 +11,14 @@ Author: James.Yu
 *************************************************/
 
 
-function Index(options) {
+function ModIndex(options) {
 
     this.initialize();
 
     return this;
 };
 
-Index.prototype = {
+ModIndex.prototype = {
 
     _container: null,
     _tmpl: "tplPageIndex",

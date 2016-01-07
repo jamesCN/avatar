@@ -18,6 +18,7 @@
 
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/trip.css">   
     <link rel="stylesheet" href="./css/detail.css">
     <link rel="stylesheet" href="./css/article.css">
     <link rel="stylesheet" href="./css/index.css">
@@ -56,6 +57,54 @@
             </li>
         <# } #>    
     </ul>
+</script>
+
+<script type="text/html" id="tplTripMe">
+    <ul>
+    <# for(var i=0; i<me.length; i++) {#>
+        <li>
+            <li><b><#= me[i].key #></b><span><#= me[i].value #></span></li>
+        </li>
+    <# } #>
+    </ul>  
+</script>
+
+<script type="text/html" id="tplTripTrip">
+    <# for(var i=0; i<trips.length; i++) {#>
+        <div class="trip-item">
+        <# if(i == trips.length-1){ #>
+            <div class="content trip-bottom">
+        <# } else { #>
+            <div class="content">
+        <# } #>
+                <strong><#= trips[i].company #></strong>
+                <p><#= trips[i].info #></p>
+                <h1 class="tags">
+                    <# for(var j=0; j<trips[i].tags.length; j++) {#>
+                    <a class="<#= trips[i].tags[j].class #>">    <#= trips[i].tags[j].name #>
+                    </a>
+                    <# } #>
+                </h1>
+            </div>
+        </div>
+    <# } #>  
+    <hr>
+</script>
+
+<script type="text/html" id="tplPageTrip">
+    <div class="container">
+        <div id="header">
+            <!-- tplComHeader -->
+        </div>
+        <div id="content" class="c-bk-gray">
+            <div id="info">
+                <!-- tplTripMe -->                         
+            </div>          
+            <div id="trip">
+                <!-- tplTripTrip -->         
+            </div>          
+        </div>
+    </div>    
 </script>
 
 <!-- 详情页-文章内容 -->
@@ -122,8 +171,8 @@
             <a href="" id="logo" class="left"></a>
             <span class="nav tags right">
                 <a class="left c-t-1 ft14" href="./#article">文章</a>
-                <a class="left c-t-2 ft14" href="./view.html">路图</a>
-                <a class="left c-t-3 ft14" href="./trip.html">关于我</a>
+                <a class="left c-t-2 ft14 hide" href="./view.html">旅图</a>
+                <a class="left c-t-3 ft14" href="./#trip">关于我</a>
             </span>
             <hr class="clear">
         </div>
@@ -147,15 +196,24 @@
 
 <body id="app"></body>
 
-<script type="application/javascript" src="./js/module/hashParser.js"></script>
 <script type="application/javascript" src="./js/module/header.js"></script>
 <script type="application/javascript" src="./js/module/footer.js"></script>
-<script type="application/javascript" src="./js/module/article-detail.js"></script>
+
+<script type="application/javascript" src="./js/module/trip_trip.js"></script>
+<script type="application/javascript" src="./js/module/trip_me.js"></script>
+<script type="application/javascript" src="./js/module/trip.js"></script>
+
+<script type="application/javascript" src="./js/module/article_detail.js"></script>
 <script type="application/javascript" src="./js/module/detail.js"></script>
-<script type="application/javascript" src="./js/module/article-list.js"></script>
+
+<script type="application/javascript" src="./js/module/article_list.js"></script>
 <script type="application/javascript" src="./js/module/article.js"></script>
+
 <script type="application/javascript" src="./js/module/index.js"></script>
-<script type="application/javascript" src="./js/xRouter.js"></script>
+
+<script type="application/javascript" src="./js/core/hashParser.js"></script>
+<script type="application/javascript" src="./js/core/xRouter.js"></script>
+
 <script type="application/javascript" src="./js/main.js"></script>
 
 </html>

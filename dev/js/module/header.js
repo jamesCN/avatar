@@ -22,7 +22,7 @@ Header.prototype = {
     container: "",
     tmpl: "tplComHeader",
     backType: 0, 
-    backUrl: "/",
+    backUrl: "/#index",
     goUrl: null,
 
     initialize: function() {
@@ -36,7 +36,7 @@ Header.prototype = {
         var that = this;
 
         $(".back").click(function(){
-            if(that.bakcType==1) {
+            if(that.backType==1) {
                 window.history.go(-1);
             } else {
                 location.href = that.backUrl;    

@@ -7,6 +7,8 @@ exports.envs = {
   "test": "test",
 
   // 最终压缩文件，提交服务器进行发布。
-  "rel": "assets"
+  "rel": "assets",
+
+  "v1": "v1.0"
 
 };

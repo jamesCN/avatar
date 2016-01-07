@@ -92,3 +92,7 @@ a:visited {
 .clear {
 	clear: both;
 }
+
+.hide {
+	display: none;
+}
