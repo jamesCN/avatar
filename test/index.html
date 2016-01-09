@@ -13,24 +13,179 @@
     <meta name="keywords" content="html5 css3 javascript node.js spa" />
     <title>James Yu's xBlog</title>
 
-    <link rel="stylesheet" href="xblog.css?test">
-        
-    <script type="application/javascript" src="./js/lib/jquery-1.10.1.min.js?test"></script>
-    <script type="application/javascript" src="./js/lib/tmpl.js?test"></script>
-    
+    <link rel="stylesheet" href="./xblog.css">   
 </head>
-<script type="text/html" id="tplIndex">
+
+<!-- 头部组件 -->
+<script type="text/html" id="tplComHeader">
+    <i class="icon iconfont back">&#xe628;</i>
+    <div class="title">
+        <#= title #>
+    </div>
+    <i class="icon iconfont link">&#xe640;</i>
+    <hr>
 </script>
 
-<body id="app">
+<!-- 尾部组件 -->
+<script type="text/html" id="tplComFooter">
+    <div class="con-info">
+        <span><i class="ft16 icon iconfont">&#xe626;</i>: <#= website #></span>
+        <span><i class="ft16 icon iconfont">&#xe62e;</i>: <#= mail #></span>
+        <span><i class="ft16 icon iconfont">&#xe619;</i>: <#= company #> &copy;<#= timespan #></span>
+    </div>
+    <div class="weixin"></div>    
+</script>
+
+<!-- 文章列表 -->
+<script type="text/html" id="tplArticleList">
+    <ul class="art-list">
+        <# for(var i=0; i<articles.length; i++) {#>
+            <li>
+                <span><b>[<#=articles[i].tag #>]</b><a href="./#detail?id=<#=articles[i].id #>"><#=articles[i].title #></a></span><img src="<#=articles[i].picture #>"></img>
+            </li>
+        <# } #>    
+    </ul>
+</script>
+
+<script type="text/html" id="tplTripMe">
+    <ul>
+    <# for(var i=0; i<me.length; i++) {#>
+        <li>
+            <li><b><#= me[i].key #></b><span><#= me[i].value #></span></li>
+        </li>
+    <# } #>
+    </ul>  
+</script>
+
+<script type="text/html" id="tplTripTrip">
+    <# for(var i=0; i<trips.length; i++) {#>
+        <div class="trip-item">
+        <# if(i == trips.length-1){ #>
+            <div class="content trip-bottom">
+        <# } else { #>
+            <div class="content">
+        <# } #>
+                <strong><#= trips[i].company #></strong>
+                <p><#= trips[i].info #></p>
+                <h1 class="tags">
+                    <# for(var j=0; j<trips[i].tags.length; j++) {#>
+                    <a class="<#= trips[i].tags[j].class #>">    <#= trips[i].tags[j].name #>
+                    </a>
+                    <# } #>
+                </h1>
+            </div>
+        </div>
+    <# } #>  
+    <hr>
+</script>
+
+<script type="text/html" id="tplPageTrip">
+    <div class="container">
+        <div id="header">
+            <!-- tplComHeader -->
+        </div>
+        <div id="content" class="c-bk-gray">
+            <div id="info">
+                <!-- tplTripMe -->                         
+            </div>          
+            <div id="trip">
+                <!-- tplTripTrip -->         
+            </div>          
+        </div>
+    </div>    
+</script>
+
+<!-- 详情页-文章内容 -->
+<script type="text/html" id="tplArticleDetail">
+    <div class="d-header">
+        <span class="d-title"><#= article.tag #><#= article.title #></span>
+        <div class="clear"></div>
+        <hr/>
+        <span class="d-author"><b><#= article.author #></b></span>
+        <span class="d-date"><#= article.createTime #></span>
+        <div class="clear"></div>
+    </div>  
+    <div class="d-content">
+        <#= article.content #>
+    </div>
+    <div class="d-footer">
+        <hr/>
+        <span class="d-read">阅读(<#= article.read #>)</span>
+        <span class="d-store">收藏(<#= article.store #>) </span>
+        <span class="d-share">分享：<b></b><b></b></span>
+        <div class="clear"></div>
+    </div> 
+</script>
+
+<!-- 旅途页-瀑布流 -->
+<script type="text/html" id="tplViewBoxes">
+    <div id="boxes">
+        <# for (var i=0; i< boxes.length; i++) { #>
+        <div class="box">
+            <div class="content">
+                <img src="<#= boxes[i].image #>">
+            </div>
+        </div>
+        <# } #>        
+    </div> 
+</script>
+
+<!-- 旅图页 -->
+<script type="text/html" id="tplPageView">
+<div id="view" class="container color_gray">
+        <div id="header">
+            <!-- tplComHeader -->
+        </div>      
+        <div id="content">
+         
+        </div>
+    </div>
+</script>
+<!-- 详情页 -->
+<script type="text/html" id="tplPageDetail">
+    <div id="mod_detail" class="container">
+        <div id="header">
+            <!-- tplComHeader -->
+        </div>
+        <div id="content">
+            <div id="detail">
+                <!-- tplArticleDetail -->
+            </div>          
+        </div>
+    </div>
+</script>
+
+<!-- 文章列表页 -->
+<script type="text/html" id="tplPageArticle">
+    <div id="mod_article" class="container">
+        <div id="header">
+            <!-- tplComHeader -->
+        </div>
+        <div id="content" class="c-bk-gray">
+            <div id="advice">
+                <div class="ad-swap">
+                </div>
+            </div>
+            <div id="article">
+                <!-- tplArticleList -->
+            </div>
+            <div id="contact">
+                <!-- tplComFooter -->
+            </div>
+        </div>
+    </div>
+</script>
+
+<!-- 首页 -->
+<script type="text/html" id="tplPageIndex">
     <div id="index" class="container">
         <div id="header">
             <a href="" id="logo" class="left"></a>
             <span class="nav tags right">
-				<a class="left c-t-1 ft14" href="./article.html">文章</a>
-				<a class="left c-t-2 ft14" href="./view.html">路图</a>
-				<a class="left c-t-3 ft14" href="./trip.html">关于我</a>
-			</span>
+                <a class="left c-t-1 ft14" href="./#article">文章</a>
+                <a class="left c-t-2 ft14 hide" href="./#view">旅图</a>
+                <a class="left c-t-3 ft14" href="./#trip">关于我</a>
+            </span>
             <hr class="clear">
         </div>
         <div id="content" class="c-bk-gray">
@@ -41,46 +196,18 @@
                     <span class="ft15">读书 or 旅行，心和身体至少一个是在路上。</span>
                 </div>
             </div>
-            <div id="article">
-                <ul class="art-list">
-                    <li>
-                        <span><b>[原创]</b><a href="./detail.html">谈CSS与Table布局的核心区别。</a></span><img src="./img/article/css_200x200.png"></img>
-                    </li>
-                    <li>
-                        <span><b>[分享]</b><a href="./detail.html">不可不知的CSS310个高级技巧。</a></span><img src="./img/article/css3_180x180.png"></img>
-                    </li>
-                    <li>
-                        <span><b>[原创]</b><a href="./detail.html">(fn())()JS函数大起底。</a></span><img src="./img/article/ajax_200x200.png"></img>
-                    </li>
-                    <li>
-                        <span><b>[原创]</b><a href="./detail.html">Javascript中哪些面向对象写法。</a></span><img src="./img/article/js_200x200.png"></img>
-                    </li>
-                </ul>
-                <ul class="art-list">
-                    <li>
-                        <span><b>[分享]</b><a href="./detail.html">如何优化MySQL中的索引。</a></span><img src="./img/article/mysql_200x200.png"></img>
-                    </li>
-                    <li>
-                        <span><b>[原创]</b><a href="./detail.html">谈HTML5中的Socket.io使用。</a></span><img src="./img/article/html5_200x200.png"></img>
-                    </li>
-                    <li>
-                        <span><b>[分享]</b><a href="./detail.html">图解CSS3选择器。</a></span><img src="./img/article/css3_180x180.png"></img>
-                    </li>
-                    <li>
-                        <span><b>[分享]</b><a href="./detail.html">电商业务开发中的那些坑！</a></span><img src="./img/article/w3c_164x164.png"></img>
-                    </li>
-                </ul>
+            <div id="article-list">
+                <!-- tplArticleList -->
             </div>
             <div id="contact">
-                <div class="con-info">
-                    <span><i class="ft16 icon iconfont">&#xe626;</i>: me.html5s.net</span>
-                    <span><i class="ft16 icon iconfont">&#xe62e;</i>: x.james.yu@gmail.com</span>
-                    <span><i class="ft16 icon iconfont">&#xe619;</i>: viewsoft &copy;2015~2016</span>
-                </div>
-                <div class="weixin"></div>
+                <!-- tplComFooter -->
             </div>
         </div>
     </div>
-</body>
+</script>
+
+<body id="app"></body>
+
+<script type="application/javascript" src="./xblog.js"></script>
 
 </html>

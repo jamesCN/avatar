@@ -18,6 +18,8 @@
 
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/common.css">
+    
+    <link rel="stylesheet" href="./css/view.css">    
     <link rel="stylesheet" href="./css/trip.css">   
     <link rel="stylesheet" href="./css/detail.css">
     <link rel="stylesheet" href="./css/article.css">
@@ -129,6 +131,30 @@
     </div> 
 </script>
 
+<!-- 旅途页-瀑布流 -->
+<script type="text/html" id="tplViewBoxes">
+    <div id="boxes">
+        <# for (var i=0; i< boxes.length; i++) { #>
+        <div class="box">
+            <div class="content">
+                <img src="<#= boxes[i].image #>">
+            </div>
+        </div>
+        <# } #>        
+    </div> 
+</script>
+
+<!-- 旅图页 -->
+<script type="text/html" id="tplPageView">
+<div id="view" class="container color_gray">
+        <div id="header">
+            <!-- tplComHeader -->
+        </div>      
+        <div id="content">
+         
+        </div>
+    </div>
+</script>
 <!-- 详情页 -->
 <script type="text/html" id="tplPageDetail">
     <div id="mod_detail" class="container">
@@ -171,7 +197,7 @@
             <a href="" id="logo" class="left"></a>
             <span class="nav tags right">
                 <a class="left c-t-1 ft14" href="./#article">文章</a>
-                <a class="left c-t-2 ft14 hide" href="./view.html">旅图</a>
+                <a class="left c-t-2 ft14 hide" href="./#view">旅图</a>
                 <a class="left c-t-3 ft14" href="./#trip">关于我</a>
             </span>
             <hr class="clear">
@@ -198,6 +224,9 @@
 
 <script type="application/javascript" src="./js/module/header.js"></script>
 <script type="application/javascript" src="./js/module/footer.js"></script>
+
+<script type="application/javascript" src="./js/module/view_boxes.js"></script>
+<script type="application/javascript" src="./js/module/view.js"></script>
 
 <script type="application/javascript" src="./js/module/trip_trip.js"></script>
 <script type="application/javascript" src="./js/module/trip_me.js"></script>

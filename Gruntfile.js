@@ -2,9 +2,12 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+
     pkg: grunt.file.readJSON('package.json'),
+
     dirs: {
-      src: 'dev/css',
+      css_src: 'dev/css',
+      js_src: 'dev/js',
       dest: 'test',
       destName: 'xblog'
     },
@@ -29,18 +32,28 @@ module.exports = function(grunt) {
       },
       basic: {
         src: [
-        '<%= dirs.src %>/lib/iconfont/iconfont.css',
-        '<%= dirs.src %>/base.css', 
-        '<%= dirs.src %>/layout.css', 
-        '<%= dirs.src %>/font.css', 
-        '<%= dirs.src %>/color.css',
-        '<%= dirs.src %>/common.css',
-        '<%= dirs.src %>/index.css',
-        '<%= dirs.src %>/article.css',
-        '<%= dirs.src %>/view.css',
-        '<%= dirs.src %>/trip.css',
-        '<%= dirs.src %>/detail.css'],
+        '<%= dirs.css_src %>/lib/iconfont/iconfont.css',
+        '<%= dirs.css_src %>/base.css', 
+        '<%= dirs.css_src %>/layout.css', 
+        '<%= dirs.css_src %>/font.css', 
+        '<%= dirs.css_src %>/color.css',
+        '<%= dirs.css_src %>/common.css',
+        '<%= dirs.css_src %>/index.css',
+        '<%= dirs.css_src %>/article.css',
+        '<%= dirs.css_src %>/view.css',
+        '<%= dirs.css_src %>/trip.css',
+        '<%= dirs.css_src %>/detail.css'],
         dest: '<%= dirs.dest %>/<%= dirs.destName %>.css'
+      },
+      extras: {
+        src: ['<%= dirs.js_src %>/lib/jquery.js', 
+        '<%= dirs.js_src %>/lib/tmpl.js',
+        '<%= dirs.js_src %>/core/hashParser.js',
+        '<%= dirs.js_src %>/core/xRouter.js',
+        '<%= dirs.js_src %>/module/*.js',
+        '<%= dirs.js_src %>/main.js'
+        ],
+        dest: '<%= dirs.dest %>/<%= dirs.destName %>.js',
       }
     },
 

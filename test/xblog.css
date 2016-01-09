@@ -116,6 +116,10 @@ a:visited {
 .clear {
 	clear: both;
 }
+
+.hide {
+	display: none;
+}
 /* #header */
 #header {
 	position: fixed;

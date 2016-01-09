@@ -6,10 +6,10 @@ var config = {
     	"index": new ModIndex(),
     	"article": new ModArticle(),
     	"detail": new ModDetail(),
-    	"trip": new ModTrip()
+    	"trip": new ModTrip(),
+    	"view": new ModView()
 	}	
 }
-
 
 var app = new AvataJS(config);
 
